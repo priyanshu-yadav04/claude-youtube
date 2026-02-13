@@ -12,6 +12,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+import SupabaseProvider from "@/components/providers/supabase-provider";
+
 export const metadata: Metadata = {
   title: "VidSync: an AI video generator and Scheduler App",
   description: "VidSync is an AI-powered video generation and scheduling platform that helps you create and share engaging video content effortlessly.",
@@ -27,7 +29,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <SupabaseProvider>
+          {children}
+        </SupabaseProvider>
       </body>
     </html>
   );
