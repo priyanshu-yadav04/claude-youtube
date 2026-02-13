@@ -1,3 +1,7 @@
+"use client";
+
+import Link from "next/link";
+import { SignedIn, SignedOut, SignUpButton } from "@clerk/nextjs";
 import { Mail } from "lucide-react";
 
 export function Integrations() {
@@ -48,9 +52,20 @@ export function Integrations() {
                 <div className="mt-16 rounded-2xl bg-zinc-900 p-8 md:p-12 text-center text-white dark:bg-zinc-100 dark:text-zinc-900">
                     <h3 className="text-2xl font-bold mb-4">Ready to go viral?</h3>
                     <p className="mb-8 opacity-80 max-w-lg mx-auto">Join 10,000+ creators who are saving 20+ hours a week with VidSync.</p>
-                    <button className="h-12 px-8 rounded-full bg-white text-zinc-900 font-medium hover:bg-zinc-100 transition-colors dark:bg-zinc-900 dark:text-white dark:hover:bg-zinc-800">
-                        Get Started for Free
-                    </button>
+                    <SignedOut>
+                        <SignUpButton mode="modal">
+                            <button className="h-12 px-8 rounded-full bg-white text-zinc-900 font-medium hover:bg-zinc-100 transition-colors dark:bg-zinc-900 dark:text-white dark:hover:bg-zinc-800">
+                                Get Started for Free
+                            </button>
+                        </SignUpButton>
+                    </SignedOut>
+                    <SignedIn>
+                        <Link href="/dashboard">
+                            <button className="h-12 px-8 rounded-full bg-white text-zinc-900 font-medium hover:bg-zinc-100 transition-colors dark:bg-zinc-900 dark:text-white dark:hover:bg-zinc-800">
+                                Go to Dashboard
+                            </button>
+                        </Link>
+                    </SignedIn>
                 </div>
             </div>
         </section>

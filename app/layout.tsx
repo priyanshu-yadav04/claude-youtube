@@ -19,20 +19,24 @@ export const metadata: Metadata = {
   description: "VidSync is an AI-powered video generation and scheduling platform that helps you create and share engaging video content effortlessly.",
 };
 
+import { ClerkProvider } from "@clerk/nextjs";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <SupabaseProvider>
-          {children}
-        </SupabaseProvider>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          <SupabaseProvider>
+            {children}
+          </SupabaseProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
