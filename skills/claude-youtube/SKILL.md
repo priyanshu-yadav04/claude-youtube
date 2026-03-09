@@ -1,5 +1,5 @@
 ---
-name: claude-youtube
+name: youtube
 description: >
   The ultimate YouTube creator skill. Covers channel audits, video SEO,
   retention-engineered scripts, hook writing, thumbnail briefs, content
