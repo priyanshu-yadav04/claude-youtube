@@ -1,3 +1,7 @@
+"use client";
+
+import Link from "next/link";
+import { SignedIn, SignedOut, SignUpButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Sparkles } from "lucide-react";
 
@@ -27,9 +31,20 @@ export function Hero() {
                     </p>
 
                     <div className="flex flex-col gap-4 min-[400px]:flex-row">
-                        <Button size="lg" className="gap-2 h-12 px-8 text-base">
-                            Start Generating Free <ArrowRight className="h-4 w-4" />
-                        </Button>
+                        <SignedOut>
+                            <SignUpButton mode="modal">
+                                <Button size="lg" className="gap-2 h-12 px-8 text-base">
+                                    Start Generating Free <ArrowRight className="h-4 w-4" />
+                                </Button>
+                            </SignUpButton>
+                        </SignedOut>
+                        <SignedIn>
+                            <Link href="/dashboard">
+                                <Button size="lg" className="gap-2 h-12 px-8 text-base">
+                                    Go to Dashboard <ArrowRight className="h-4 w-4" />
+                                </Button>
+                            </Link>
+                        </SignedIn>
                         <Button size="lg" variant="outline" className="gap-2 h-12 px-8 text-base">
                             <Play className="h-4 w-4" /> Watch Demo
                         </Button>
